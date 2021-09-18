@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selamat datang, \nBoy Kurniawan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:id="@+id/garis"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="#e0e0e0"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Silahkan isi data berikut \nsetiap pendataan"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+
+    <EditText
+        android:id="@+id/divisi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Estate / Divisi"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Block"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/luas"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Luas"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/tahun_tanam"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Tahun Tanam"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/pelaksanaan_sensus"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Pelaksanaan Sensus"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pelaksanaan_sensus"
+        android:background="@drawable/btn_custom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/white"
+        android:text="Simpan"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sebelum Menggunakan Aplikasi \nSilahkan isi data berikut"
+        android:gravity="center"
+        android:layout_above="@id/garis"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"/>
+
+    <View
+        android:id="@+id/garis"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:layout_above="@id/nama"
+        android:background="#e0e0e0"/>
+
+    <EditText
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Nama Lengkap"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:layout_above="@id/no_induk"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/no_induk"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="No Induk Karyawan"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:layout_above="@id/estate"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/estate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Estate"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:inputType="text"
+        android:layout_centerInParent="true"
+        android:background="@drawable/et_custom"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/estate"
+        android:background="@drawable/btn_custom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/white"
+        android:text="Simpan"/>
+
+
+
+</RelativeLayout>
