@@ -83,7 +83,7 @@ class PendataanActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        viewModelFactory = PendataanModelViewFactory( idHeader, dPendataanDao )
+        viewModelFactory = PendataanModelViewFactory( idHeader, database )
         viewModel = ViewModelProvider(this, viewModelFactory).get(PendataanViewModel::class.java)
     }
 

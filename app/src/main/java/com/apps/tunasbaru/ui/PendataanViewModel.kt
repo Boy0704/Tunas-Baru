@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.apps.tunasbaru.db.DPendataanDao
 import com.apps.tunasbaru.db.TunasDB
+import com.apps.tunasbaru.model.HeaderPendataan
+import com.apps.tunasbaru.model.Karyawan
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -23,7 +25,7 @@ import java.io.IOException
 
 class PendataanViewModel (
     val idHeader: String,
-    val dPendataanDao: DPendataanDao
+    val database: TunasDB
         ): ViewModel() {
 
     private val _counter = MutableLiveData<String>("0")
@@ -59,11 +61,13 @@ class PendataanViewModel (
         //Create Header Cell Style
         val cellStyle = getHeaderStyle(workbook)
 
+
+
         //Creating sheet header row
         createSheetHeader(cellStyle, sheet)
 //        progressshow()
         //Adding data to the sheet
-        for (i in 1..200) {
+        for (i in 5..205) {
             addData(i, sheet)
         }
 
@@ -74,8 +78,30 @@ class PendataanViewModel (
      fun createSheetHeader(cellStyle: CellStyle, sheet: Sheet) {
         //setHeaderStyle is a custom function written below to add header style
 
+         var hPendataanDao = database.getHPendataanDao()
+         val data = arrayListOf<HeaderPendataan>()
+         data.addAll(hPendataanDao.getById(idHeader.toInt()))
+
+         createCell(sheet.createRow(0), 0, "DATA MATANG SADAP")
+         createCell(sheet.createRow(1), 0, "Estate/Divisi :")
+         createCell(sheet.createRow(1), 1, "${data[0].divisi}")
+
+         createCell(sheet.createRow(2), 0, "Block :")
+         createCell(sheet.createRow(2), 1, "${data[0].block}")
+
+         createCell(sheet.createRow(1), 3, "Luas :")
+         createCell(sheet.createRow(1), 4, "${data[0].luas}")
+
+         createCell(sheet.createRow(2), 3, "Tahun Tanam :")
+         createCell(sheet.createRow(2), 4, "${data[0].tahun_tanam}")
+
+         createCell(sheet.createRow(1), 5, "Pelaksanaan Sensus :")
+         createCell(sheet.createRow(1), 6, "${data[0].pelaksanaan_sensus}")
+
         //Create sheet first row
-        val row = sheet.createRow(0)
+        val row = sheet.createRow(4)
+
+
 
         //Header list
         var HEADER_LIST = listOf("No", "1", "2")
@@ -128,14 +154,15 @@ class PendataanViewModel (
         //Create row based on row index
         val row = sheet.createRow(rowIndex)
 
+         val dPendataanDao = database.getDPendataanDao()
 
         //Add data to each cell
-         createCell(row, 0, "$rowIndex")
+         createCell(row, 0, "${rowIndex - 4}")
 
         for (i in 1..200) {
             var nilaiIsi = 0
             var kolom = i;
-            var nilai = dPendataanDao.getXY(idHeader = idHeader.toInt(), urutX = rowIndex, urutY = kolom)
+            var nilai = dPendataanDao.getXY(idHeader = idHeader.toInt(), urutX = rowIndex-4, urutY = kolom)
             if (nilai.isNotEmpty()){
                 nilaiIsi = nilai[0].nilai
             }
